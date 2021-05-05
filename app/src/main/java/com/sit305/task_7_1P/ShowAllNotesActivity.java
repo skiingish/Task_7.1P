@@ -27,8 +27,6 @@ public class ShowAllNotesActivity extends AppCompatActivity {
 
     String[] tempNotesArray =  {"Hello I am Note", "Hello I am also a Note"};
 
-    // TODO may need a add a on return method to reload the notes info.
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

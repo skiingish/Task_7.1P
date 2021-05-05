@@ -18,11 +18,31 @@
         android:padding="18dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black" />
-
-    <Button
-        android:id="@+id/deleteNote_BTN"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="Delete" />
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center"
+        android:background="@color/white"
+        >
+
+        <Button
+            android:id="@+id/updateNote_BTN"
+            android:layout_width="150dp"
+            android:maxWidth="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Update" />
+
+        <Button
+            android:id="@+id/deleteNote_BTN"
+            android:layout_width="150dp"
+            android:maxWidth="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Delete" />
+
+    </LinearLayout>
+
 </LinearLayout>

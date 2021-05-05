@@ -35,7 +35,7 @@ public class CreateNoteActivity extends AppCompatActivity {
 
                 if (rowIDResult > 0)
                 {
-                    Toast.makeText(CreateNoteActivity.this, "Created a new note:  " + noteData + " At Row: " + rowIDResult, Toast.LENGTH_LONG).show();
+                    finish();
                 }
                 else
                 {

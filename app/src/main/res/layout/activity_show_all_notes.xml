@@ -6,4 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ShowAllNotesActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notes_RV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="153dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

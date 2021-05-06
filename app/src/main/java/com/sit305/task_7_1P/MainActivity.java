@@ -14,9 +14,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set the button views.
         Button createNote_BTN = findViewById(R.id.createNote_BTN);
         Button showNote_BTN = findViewById(R.id.showNotes_BTN);
 
+        // Set up the create note Intent.
         createNote_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Set up the show all notes Intent.
         showNote_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

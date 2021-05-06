@@ -66,23 +66,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-
     // Update Note
-    public int updateNote(Note note)
+    public int updateNote(int noteID, String updatedNoteData)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(Const.NOTE_DATA, note.getNoteData());
+        contentValues.put(Const.NOTE_DATA, updatedNoteData);
 
-        return db.update(Const.TABLE_NAME, contentValues, Const.NOTE_ID + "=?", new String[]{String.valueOf(note.getNote_id())});
+        return db.update(Const.TABLE_NAME, contentValues, Const.NOTE_ID + "=?", new String[]{String.valueOf(noteID)});
 
     }
 
     // Delete Note
     public long deleteNote(int noteID) {
         SQLiteDatabase db = this.getWritableDatabase();
-        //ContentValues values = new ContentValues();
-        //values.put(Const.NOTE_ID, note.getNote_id());
 
         long result = db.delete(Const.TABLE_NAME, Const.NOTE_ID + "=?", new String[]{String.valueOf(noteID)});
         db.close();

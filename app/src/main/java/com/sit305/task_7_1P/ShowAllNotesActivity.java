@@ -17,8 +17,10 @@ import java.util.List;
 
 public class ShowAllNotesActivity extends AppCompatActivity {
 
+    // The DB object.
     DatabaseHelper db;
 
+    // The Recycler
     RecyclerView notes_RV;
     ShowNotesRecyclerViewAdapter showNotesRecyclerViewAdapter;
 
@@ -35,34 +37,17 @@ public class ShowAllNotesActivity extends AppCompatActivity {
         // Get the recycler view;
         notes_RV = findViewById(R.id.notes_RV);
 
-        // Temp build the list of notes
-        for (int i = 0 ; i < tempNotesArray.length; i++) {
-            Note note = new Note(tempNotesArray[i]);
-            //notesList.add(note);
-        }
-
-        // Get the list of notes from the database;
-        db = new DatabaseHelper(this);
-        notesList = db.readAllNotes();
-
-        // Build the notes list.
-        showNotesRecyclerViewAdapter = new ShowNotesRecyclerViewAdapter(notesList, this);
-        notes_RV.setAdapter(showNotesRecyclerViewAdapter);
-        notes_RV.setLayoutManager(new LinearLayoutManager(this));
+        // Read the db and display the notes.
+        buildNotesRecyclerView();
     }
 
+    // When coming back to this activity reload the notes recycler view from the DB.
     @Override
     protected void onResume() {
         super.onResume();
 
-        // Get the list of notes from the database;
-        db = new DatabaseHelper(this);
-        notesList = db.readAllNotes();
-
-        // Build the notes list.
-        showNotesRecyclerViewAdapter = new ShowNotesRecyclerViewAdapter(notesList, this);
-        notes_RV.setAdapter(showNotesRecyclerViewAdapter);
-        notes_RV.setLayoutManager(new LinearLayoutManager(this));
+        // Read the db and display the notes.
+        buildNotesRecyclerView();
     }
 
     public void onClickShowSelection(View view)
@@ -79,5 +64,17 @@ public class ShowAllNotesActivity extends AppCompatActivity {
         // Start the activity.
         startActivity(editNoteIntent);
 
+    }
+
+    private void buildNotesRecyclerView()
+    {
+        // Get the list of notes from the database;
+        db = new DatabaseHelper(this);
+        notesList = db.readAllNotes();
+
+        // Build the notes list.
+        showNotesRecyclerViewAdapter = new ShowNotesRecyclerViewAdapter(notesList, this);
+        notes_RV.setAdapter(showNotesRecyclerViewAdapter);
+        notes_RV.setLayoutManager(new LinearLayoutManager(this));
     }
 }

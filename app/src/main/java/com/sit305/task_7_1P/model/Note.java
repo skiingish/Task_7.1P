@@ -1,14 +1,22 @@
 package com.sit305.task_7_1P.model;
 
+// Notes class
 public class Note {
 
+    // Note ID.
     private int note_id;
+
+    // The user entered note data.
     private String noteData;
+
+    // The timestamp of when the note was created.
     private String timestamp;
 
+    // Ctor
     public Note() {
     }
 
+    // Setter and Getter methods for the note fields.
     public Note(String noteData) {
         this.noteData = noteData;
     }

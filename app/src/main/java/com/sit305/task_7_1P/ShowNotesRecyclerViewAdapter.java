@@ -16,6 +16,7 @@ import com.sit305.task_7_1P.model.Note;
 
 public class ShowNotesRecyclerViewAdapter extends RecyclerView.Adapter<ShowNotesRecyclerViewAdapter.ViewHolder>{
 
+    // The list of notes
     private List<Note> notesList;
     private Context context;
 
@@ -24,6 +25,7 @@ public class ShowNotesRecyclerViewAdapter extends RecyclerView.Adapter<ShowNotes
         this.context = context;
     }
 
+    // On create.
     @NonNull
     @Override
     public ShowNotesRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -34,7 +36,9 @@ public class ShowNotesRecyclerViewAdapter extends RecyclerView.Adapter<ShowNotes
 
     @Override
     public void onBindViewHolder(@NonNull ShowNotesRecyclerViewAdapter.ViewHolder holder, int position) {
+        // Set the notes data
         holder.notesData_TV.setText(notesList.get(position).getNoteData());
+        // Set the note's view ID from the note's db ID
         holder.notes_LL.setId(notesList.get(position).getNote_id());
     }
 
@@ -43,7 +47,7 @@ public class ShowNotesRecyclerViewAdapter extends RecyclerView.Adapter<ShowNotes
         return notesList.size();
     }
 
-    // Gets the text view to be added to the view holder.
+    // Gets the views to be added to the view holder.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         // The view inside this view holder.

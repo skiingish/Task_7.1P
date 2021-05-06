@@ -51,5 +51,4 @@ public class CreateNoteActivity extends AppCompatActivity {
             }
         });
     }
-
 }

@@ -22,13 +22,11 @@
         android:id="@+id/icon_IV"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:alpha="1"
-        android:background="@color/white"
         android:padding="6dp"
         android:scaleType="fitCenter"
-        android:visibility="visible"
-        tools:src="@drawable/notes" />
+        android:adjustViewBounds="true"
+        tools:srcCompat="@drawable/notes"
+        android:contentDescription="Image " />
 
     <LinearLayout
         android:layout_width="match_parent"
